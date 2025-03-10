@@ -2,7 +2,7 @@ import { useState, useCallback, useRef } from 'react';
 import axios from 'axios';
 
 const POSTS_PER_PAGE = 20;
-const TOTAL_POSTS = 1000; // JSONPlaceholder has 100 posts total
+const TOTAL_POSTS = 1000;
 
 interface Post {
   id: number;
