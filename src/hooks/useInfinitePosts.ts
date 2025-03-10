@@ -1,15 +1,9 @@
 import { useState, useCallback, useRef } from 'react';
 import axios from 'axios';
+import { Post } from './types';
 
 const POSTS_PER_PAGE = 20;
 const TOTAL_POSTS = 1000;
-
-interface Post {
-  id: number;
-  title: string;
-  body: string;
-  userId: number;
-}
 
 export const useInfinitePosts = () => {
   const [posts, setPosts] = useState<Post[]>([]);

@@ -3,7 +3,7 @@ import { FixedSizeList as List } from 'react-window';
 import InfiniteLoader from 'react-window-infinite-loader';
 import PostCard from './PostCard';
 import { Loader2 } from 'lucide-react';
-import { Post } from '../types/post';
+import { Post } from '../hooks/types';
 
 interface InfinitePostListProps {
   posts: Post[];
@@ -23,7 +23,7 @@ const InfinitePostList: React.FC<InfinitePostListProps> = ({
   error
 }) => {
   const itemCount = hasMore ? posts.length + 1 : posts.length;
-  
+
   const Row = ({ index, style }: { index: number; style: React.CSSProperties }) => {
     if (!isItemLoaded(index)) {
       return (
@@ -47,7 +47,7 @@ const InfinitePostList: React.FC<InfinitePostListProps> = ({
           Error: {error}
         </div>
       )}
-      
+
       <InfiniteLoader
         isItemLoaded={isItemLoaded}
         itemCount={itemCount}
